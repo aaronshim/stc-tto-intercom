@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- manual jquery load -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+
+    <title>TTO Intercom</title>   
+  </head>
+
+  <script>
+  function sendTransfer() {
+    $.get("/transfer", function(data, status){
+       if (status == "success") { 
+         alert("Successfully alerted!");
+       }
+       else {
+         alert("Uh-oh. There's a problem with the server. Try again later!");
+       }
+    });
+  };
+
+  function anyMessage() {
+
+  }
+  </script>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">TTO Intercom</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Tell them to do a transfer!</h1>
+        <p class="lead">Seriously. They'll be creeped out when the mac speaks to them.</p>
+        <p><button type="button" class="btn btn-lg btn-success" onClick="sendTransfer()">Transfer now!</button></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Or have the computer say a custom message...</h4>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>Student Technology Collaborative</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
