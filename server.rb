@@ -11,6 +11,7 @@ get '/say/*' do |phrase|
 end
 
 get '/transfer' do
+  `osascript -e "set Volume 10"`
   `say "do a transfer"`
 end
 
